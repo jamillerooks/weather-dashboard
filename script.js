@@ -53,7 +53,7 @@ function getWeather(lat, lon, city) {
 				'src',
 				`https://openweathermap.org/img/w/${weatherIcon}.png`
 			);
-			
+
 			//Search the data collected from the fetch call to get the temp, wind, humidity and uv-index for the current weather.
 			//Temp
 			var temp = document.getElementById('current-temp');
@@ -72,7 +72,7 @@ function getWeather(lat, lon, city) {
 			humidity.innerHTML = `<span> Humidity </span>${data.current.humidity}<span>%</span>`;
 			cityName = document.getElementById('cityName');
 			cityName.innerHTML = city;
-			
+
 			//uv-Index
 			var uv = data.current.uvi;
 			var uvColor = document.getElementById('uv-color');
@@ -89,7 +89,7 @@ function getWeather(lat, lon, city) {
 				uvColor.setAttribute('class', 'uvcard red');
 			}
 
-			//5-Day Forecast 
+			//5-Day Forecast
 			//Date using Moment API
 			for (var i = 1; i < 6; i++) {
 				console.log('moment +++', moment);
@@ -97,25 +97,25 @@ function getWeather(lat, lon, city) {
 				var day = document.getElementById(`day${i}`);
 				day.innerHTML = moment.unix(data.daily[i - 1].dt).format('MM/DD/YYYY');
 
-			//5-Day Temp	
+				//5-Day Temp
 				var dayTemp = document.getElementById(`day${i}Temp`);
 				dayTemp.innerHTML = `<span> Temp </span>${Math.round(
 					data.daily[i - 1].temp.day
 				)}<span>℉</span>`;
 
-			//5-Day Humidity
+				//5-Day Humidity
 				var dayHumidity = document.getElementById(`day${i}Humidity`);
 				dayHumidity.innerHTML = `<span> Humidity </span>${
 					data.daily[i - 1].humidity
 				}<span>%</span>`;
-			
-			//5-Day Wind
+
+				//5-Day Wind
 				var dayWind = document.getElementById(`day${i}Wind`);
 				dayWind.innerHTML = `<span> Wind </span>${Math.round(
 					data.daily[i - 1].wind_speed
 				)}<span> mph</span>`;
 
-			//5-Day Weather icons
+				//5-Day Weather icons
 				var dayIcon = document.getElementById(`day${i}Icon`);
 				dayIcon.setAttribute(
 					'src',
@@ -134,7 +134,7 @@ function buildHistory() {
 	cityHistoryEl.innerHTML = '';
 	var cityHistory = JSON.parse(localStorage.getItem('cityHistory')) || [];
 
-//Search buttons are created for each city	
+	//Search buttons are created for each city
 	if (cityHistory.length == 0) {
 		var newLi = document.createElement('li');
 		newLi.textContent = 'No History available right now';
@@ -157,11 +157,11 @@ function buildHistory() {
 	}
 	for (let index = 0; index < cityHistory.length; index++) {
 		var idStr = '#newBtn' + index;
-		$(idStr).on('click',  function (event) {
+		$(idStr).on('click', function (event) {
 			event.preventDefault();
 			city = $(this).text().toUpperCase();
 			console.log('event click +++', city);
-			 searchCoordinates(city);
+			searchCoordinates(city);
 		});
 	}
 }
@@ -177,10 +177,9 @@ function saveToLocal() {
 	localStorage.setItem('cityHistory', JSON.stringify(uniqueStr));
 }
 
-	searchBtn.addEventListener('click', function (event) {
+searchBtn.addEventListener('click', function (event) {
 	event.preventDefault();
 	var cityToSearch = cityInputEl.value;
 	searchCoordinates(cityToSearch);
 	saveToLocal();
 });
-
