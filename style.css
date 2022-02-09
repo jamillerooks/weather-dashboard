@@ -3,3 +3,35 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+button {
+	text-transform: uppercase;
+}
+#cityName{
+	font-size:larger;
+	font-weight:bold;
+}
+
+
+#date{
+	font-weight: bold;
+	color:#007bff;
+	margin-bottom: 0;
+	
+	
+}
+.green {
+	color: green;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.orange {
+	color: orange;
+}
+
+.red {
+	color: red;
+}
