@@ -71,20 +71,38 @@ function getWeather(lat, lon, city) {
       } else {
         uvColor.setAttribute('class', 'uvcard red');
       }
-
+      
       for (var i = 0; i < 6; i++) {
-        var day = moment.unx(data.daily[i].dt).format('MM/dd/yyyy');
-        var dayTemp = data.daily[i].temp.day;
-        var dayWind = data.daily[i].wind_speed;
-        var dayHumidity = data.daily[i].humidity;
-        var dayIcon = data.daily[i].weather[0].icon;
-        dayIcon.setAttribute(
-          (src = `https://openweathermap.org/img/w/${dayIcon}.png`)
-        );
-      }
+           var day = moment.unix(data.daily[i].dt).format('MM/dd/yyyy');
+            day.innerHTML = day;
+
+            var dayTemp = document.getElementById(`day${i}Temp`);
+            dayTemp.innerHTML=`<span> Temp </span>${Math.round(data.daily[i].temp.day)}<span>℉</span>`;
+         
+         var dayTemp = document.getElementById(`day${i}Temp`);
+           dayTemp.innerHTML = `<span> Temp </span>${Math.round(data.daily[i].temp.day)}<span>℉</span>`;
+     
+            
+         var dayHumidity = document.getElementById(`day${i}Humidity`);
+           dayHumidity.innerHTML = `<span> Humidity </span>${data.daily[i].humidity}<span>%</span>`;
+     
+            
+          var dayWind = document.getElementById(`day${i}Wind`);
+           dayWind.innerHTML = `<span> Wind </span>${Math.round(data.daily[i].wind_speed)}<span>mph</span>`;
+     
+            
+         var dayIcon = document.getElementById(`day${i}Icon`);
+           dayIcon.setAttribute("src", "http://openweathermap.org/img/wn/") + "png";
+   }
+            
+      
+   }
+  
+   )};
+      
 
 			buildHistory();
-		});
+		
 	
 	// console.log(city);
 	//console.log(date);
@@ -92,8 +110,8 @@ function getWeather(lat, lon, city) {
 	// console.log(weather.wind_speed);
 	// console.log(weather.humidity);
 	// console.log(weather.uvi);
-}
 
+    
 
 function buildHistory() {
 	cityHistoryEl.innerHTML = '';
