@@ -19,7 +19,7 @@ var currentWeatherItemsEl = document.getElementById('current-weather-items');
 //This request provides data needed to populate the current weather condition.
 function searchCoordinates(city) {
 	fetch(
-		'http://api.openweathermap.org/data/2.5/weather?q=' +
+		'https://api.openweathermap.org/data/2.5/weather?q=' +
 			city +
 			'&appid=' +
 			apiKey
