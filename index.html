@@ -56,9 +56,9 @@
 								<div class="col-12">
 									<span class="align-middle" id="cityName" class="current-weather-items">
 									</span>
-
+									<div class="fiveDayOne"></div>
 									<div id="time-zone" id="time"></div>
-									<img id="weather-icon"/>
+									<img id="weatherIcon"/>
 									<div id="date"> </div>
 								</div>
 							</div>
@@ -94,59 +94,19 @@
 						</div>
 					</div>
 					<div class="row">
-						<div
-							 id="weather-forecast" class="col weather-forecast day bg-primary text-white ml-3 mb-3 rounded">
-							 <div class="weather-forecast-item">
-								<h3  id ="day1" class="day"></h3>
-								<img  id="day1Icon">
-								<div id="day1Temp">  <span>℉</span></div>
-								<div id="day1Wind"> </div>
-								<div id="day1Humidity">  </div>
-							 </div>
+						<div class="col mt-4">
+							<div class="card pb-5 fiveDayCard pl-5">
+								<!-- Appends 5 day forecast-->
+								<h5 class="card-title mt-2 mr-5">5-Day Forecast </h5>
+								<div class="row">
+									<div class="col fiveDayOne">
+									</div>
+	
+								</div>
+	
+							</div>
 						</div>
-						<div
-							 id="weather-forecast" class="col weather-forecast day bg-primary text-white ml-3 mb-3 rounded">
-							 <div class="weather-forecast-item">
-								<div  id ="day2" class="day"></div>
-								<img  id="day2Icon">
-								<div id="day2Temp">  <span>℉</span></div>
-								<div id="day2Wind"> </div>
-								<div id="day2Humidity">  </div>
-							 </div>
-						</div>
-						<div
-							 id="weather-forecast" class="col weather-forecast day bg-primary text-white ml-3 mb-3 rounded">
-							 <div class="weather-forecast-item">
-								<div  id ="day3" class="day"></div>
-								<img  id="day3Icon">
-								<div id="day3Temp">  <span>℉</span></div>
-								<div id="day3Wind"> </div>
-								<div id="day3Humidity">  </div>
-							 </div>
-						</div>
-						<div
-							 id="weather-forecast" class="col weather-forecast day bg-primary text-white ml-3 mb-3 rounded">
-							 <div class="weather-forecast-item">
-								<div  id ="day4" class="day"></div>
-								<img  id="day4Icon">
-								<div id="day4Temp">  <span>℉</span></div>
-								<div id="day4Wind"> </div>
-								<div id="day4Humidity">  </div>
-							 </div>
-						</div>
-						<div
-							 id="weather-forecast" class="col weather-forecast day bg-primary text-white ml-3 mb-3 rounded">
-							 <div class="weather-forecast-item">
-								<div  id ="day5" class="day"></div>
-								<img  id="day5Icon">
-								<div id="day5Temp">  <span>℉</span></div>
-								<div id="day5Wind"> </div>
-								<div id="day5Humidity">  </div>
-							 </div>
-						</div>
-				</div>
-			</div>
-		</div>
+					</div>
 		
 		<script
 			src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
