@@ -6,7 +6,7 @@ This weather dashboard takes advantage of the OpenWeatherMap API, a Third-party 
 developers to access their data and functionality by making requests with 
 specific parameters to a URL. Developers are often tasked with retrieving data from another 
 application's API and using it to add vital information and animation to their projects.
-<a href="https://github.com/jamillerooks/weather-dashboard" target="_blank">Link to Weather Dashboard website</a>
+<a href="https://jamillerooks.github.io/weather-dashboard/" target="_blank">Link to Weather Dashboard website</a>
 
 # Mock-up
 <img src="./weatherDashboard.png" alt="Weather forecast of Atlanta with current and 5-Day forecast">

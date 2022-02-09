@@ -155,6 +155,15 @@ function buildHistory() {
 
 		cityHistoryEl.append(newBtn);
 	}
+	for (let index = 0; index < cityHistory.length; index++) {
+		var idStr = '#newBtn' + index;
+		$(idStr).on('click',  function (event) {
+			event.preventDefault();
+			city = $(this).text().toUpperCase();
+			console.log('event click +++', city);
+			 searchCoordinates(city);
+		});
+	}
 }
 //Search history is saved to Local Storage
 function saveToLocal() {
@@ -175,19 +184,3 @@ function saveToLocal() {
 	saveToLocal();
 });
 
-$(document).ready(function () {
-	var searchesStr = [];
-	if (localStorage.getItem('cityHistory')) {
-		searchesStr = JSON.parse(localStorage.getItem('cityHistory'));
-	}
-//The event listener allows the search history city buttons to launch the current weather and 5 day forecast
-	for (let index = 0; index < searchesStr.length; index++) {
-		var idStr = '#newBtn' + index;
-		$(idStr).on('click',  function (event) {
-			event.preventDefault();
-			city = $(this).text().toUpperCase();
-			console.log('event click +++', city);
-			 searchCoordinates(city);
-		});
-	}
-});
